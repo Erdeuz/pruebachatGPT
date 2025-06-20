@@ -22,6 +22,16 @@
       return <h1>Hello {name}</h1>;
     }
 
+    export default function Colors() {
+  const colors = ["red", "green", "blue"];
+  return (
+    <ul>
+      {colors.map((color) => (
+        <li key={color}>{color}</li>
+      ))}
+    </ul>
+  );
+}
     // Render con ReactDOM
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(<Name />);
