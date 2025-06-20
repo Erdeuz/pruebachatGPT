@@ -21,17 +21,23 @@
       const [name] = useState("John");
       return <h1>Hello {name}</h1>;
     }
+    import { useState } from "react";
 
-    export default function Colors() {
-  const colors = ["red", "green", "blue"];
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
+  function incrementCount() {
+    setCount((count) => count + 1);
+  }
+
   return (
-    <ul>
-      {colors.map((color) => (
-        <li key={color}>{color}</li>
-      ))}
-    </ul>
+    <>
+      <p>Counter: {count}</p>
+      <button onClick={incrementCount}>+1</button>
+    </>
   );
 }
+  
     // Render con ReactDOM
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(<Name />);
